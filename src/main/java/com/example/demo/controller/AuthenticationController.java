@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import com.example.demo.aspect.RateLimited;
 import com.example.demo.dto.LoginResponseDto;
 import com.example.demo.dto.LoginUserDto;
 import com.example.demo.dto.RegisterUserDto;
@@ -28,6 +29,7 @@ public class AuthenticationController {
     }
 
     @PostMapping("/register")
+
     public ResponseEntity<User> register(@RequestBody RegisterUserDto registerUserDto) {
         User registeredUser = authenticationService.register(registerUserDto);
 
