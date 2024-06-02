@@ -8,6 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface RateLimited {
-    int limitForPeriod() default 10;
-    int limitRefreshPeriod() default 1;
+    int limitForPeriod();
+    long limitRefreshPeriod();
+    String userClaim();
 }

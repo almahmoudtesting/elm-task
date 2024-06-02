@@ -23,7 +23,7 @@ public class DataController {
     }
 
     @PreAuthorize("hasAnyRole('USER')")
-    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60)
+    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60, userClaim = "email")
     @PostMapping
     public ResponseEntity<String> getData(@RequestBody String vin, Authentication authentication) {
         String username = authentication.getName();

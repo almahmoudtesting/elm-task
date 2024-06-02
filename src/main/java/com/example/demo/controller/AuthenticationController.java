@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.aspect.RateLimited;
 import com.example.demo.dto.LoginResponseDto;
 import com.example.demo.dto.LoginUserDto;
 import com.example.demo.dto.RegisterUserDto;

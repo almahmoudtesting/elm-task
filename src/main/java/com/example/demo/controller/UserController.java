@@ -32,7 +32,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60)
+    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60, userClaim = "email")
     @PreAuthorize("hasAnyRole('USER')")
     @GetMapping("/info")
     @ResponseBody
@@ -51,7 +51,7 @@ public class UserController {
         );
     }
 
-    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60)
+    @RateLimited(limitForPeriod = 20, limitRefreshPeriod = 60, userClaim = "email")
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping
     public ResponseEntity<List<User>> allUsers() {
